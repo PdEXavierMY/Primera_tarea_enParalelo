@@ -1,10 +1,8 @@
-#comenzamos probando a ejecutar el primer ejemplo de codigo provisto
-import random
-from multiprocessing import Pool
-from time import sleep
+import random #importamos la libreria random para generar numeros aleatorios
+from multiprocessing import Pool #importamos la libreria multiprocessing para poder ejecutar procesos en paralelo
+from time import sleep #importamos la libreria time para poder usar la funcion sleep(que restrasara la ejecucion del codigo)
 
-"""
-urls = ["a.com", "b.com", "c.com", "d.com"]
+"""urls = ["a.com", "b.com", "c.com", "d.com"] #comenzamos probando a ejecutar el primer ejemplo de codigo provisto
 
 def scrape(url):
     print("starting", url)
@@ -20,10 +18,10 @@ for url in urls:
 
 #las ejecuciones de los procesos se realizan en orden, por lo que nunca comenzara el proceso 2 hasta que el proceso 1 no haya terminado
 """
-#ahora ejecutaremos el codigo con la libreria multiprocessing, para probar la programacion paralela
-"""urls = ["a.com", "b.com", "c.com", "d.com"]""" 
-"""
-urls = ["a.com", "b.com", "c.com", "d.com", "e.com"] #probamos a ejecutar el codigo con 5 procesos
+
+"""urls = ["a.com", "b.com", "c.com", "d.com"] #ahora ejecutaremos el codigo con la libreria multiprocessing, para probar la programacion paralela"""
+
+"""urls = ["a.com", "b.com", "c.com", "d.com", "e.com"] #probamos a ejecutar el codigo con 5 procesos
 
 def scrape(url):
     print("starting", url)
