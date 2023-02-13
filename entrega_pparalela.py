@@ -82,16 +82,15 @@ def scrape(url): #definimos la funcion scrape
     return url, duration #devolvemos el valor de la variable url y el tiempo que ha tardado en ejecutarse
 
 def ejecutar_practica(): #definimos la funcion ejecutar_practica, que servira como lanzador del codigo
-    forma_de_ejecucion = solicitar_introducir_numero_extremo("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente: ", 1, 2) #pedimos al usuario que introduzca la opcion que desea ejecutar
+    urls = ["a.com", "b.com", "c.com", "d.com", "e.com"] #creamos una lista con 5 urls
+    forma_de_ejecucion = solicitar_introducir_numero_extremo("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente", 1, 2) #pedimos al usuario que introduzca la opcion que desea ejecutar
     if forma_de_ejecucion == "1":
-        urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
         output = []
         for url in urls: #recorremos la lista urls
             result = scrape(url)
             output.append(result) #añadimos el resultado de la ejecucion de la funcion scrape a la lista output
             #ejecutamos el codigo secuencialmente
     elif forma_de_ejecucion == "2":
-        urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
         if __name__ == "__main__":
             pool = Pool(processes=4) #creamos un pool de procesos con 4 procesos
             data = pool.map(scrape, urls) #ejecutamos la funcion scrape en paralelo
@@ -100,3 +99,5 @@ def ejecutar_practica(): #definimos la funcion ejecutar_practica, que servira co
             for row in data:
                 print(row)
             #ejecutamos el codigo en paralelo
+
+ejecutar_practica()

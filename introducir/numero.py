@@ -46,5 +46,5 @@ def solicitar_introducir_numero_extremo(invite, minimum=MIN, maximum=MAX):
             # Tenemos lo que queremos, salimos del bucle saliendo de la función
             return datoIntroducido
         else:
-            print("Opcion no valida")
+            print("Opción no valida")
             #si el usuario no introduce una opcion valida, se le volvera a pedir que introduzca una opcion valida
