@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
 urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
 """
-#ahora probaremos a ejecutar el codigo final con 5 procesos
+"""#ahora probaremos a ejecutar el codigo final con 5 procesos
 
 def scrape(url):
     print("starting", url)
@@ -71,4 +71,32 @@ if __name__ == "__main__":
     pool.close()    
     print()
     for row in data:
-        print(row)
+        print(row)"""
+
+def scrape(url):
+    print("starting", url)
+    duration = round(random.random(),3)
+    sleep(duration)
+    print("finished", url, "time taken:", duration, "seconds")
+    return url, duration
+
+def ejecutar_practica():
+    forma_de_ejecucion = input("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente: ")
+    if forma_de_ejecucion == "1":
+        urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
+        output = []
+        for url in urls:
+            result = scrape(url)
+            output.append(result)
+    elif forma_de_ejecucion == "2":
+        urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
+        if __name__ == "__main__":
+            pool = Pool(processes=4)
+            data = pool.map(scrape, urls)
+            pool.close()    
+            print()
+            for row in data:
+                print(row)
+    else:
+        print("Opcion no valida")
+        ejecutar_practica()
