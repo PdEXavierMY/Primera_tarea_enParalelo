@@ -1,12 +1,11 @@
 #comenzamos probando a ejecutar el primer ejemplo de codigo provisto
+import random
 from multiprocessing import Pool
 from time import sleep
-import random
 
-urls = ["a.com", "b.com", "c.com", "d.com"]
 """
-import random
-from time import sleep
+urls = ["a.com", "b.com", "c.com", "d.com"]
+
 def scrape(url):
     print("starting", url)
     duration = round(random.random(), 3)
@@ -22,6 +21,7 @@ for url in urls:
 #las ejecuciones de los procesos se realizan en orden, por lo que nunca comenzara el proceso 2 hasta que el proceso 1 no haya terminado
 """
 #ahora ejecutaremos el codigo con la libreria multiprocessing, para probar la programacion paralela
+urls = ["a.com", "b.com", "c.com", "d.com"]
 
 def scrape(url):
     print("starting", url)
@@ -32,20 +32,25 @@ def scrape(url):
 
 from multiprocessing import Pool
 
-pool = Pool(processes=4)
+if __name__ == "__main__":
 
-data = pool.map(scrape, urls)
+    pool = Pool(processes=4)
 
-# scrape("a.com") # hecho por el proceso 1 
-# scrape("b.com") # hecho por el proceso 2 
-# scrape("c.com") # hecho por el proceso 3 
-# scrape("d.com") # hecho por proceso 4
+    data = pool.map(scrape, urls)
 
-pool.close()
-print()
+    scrape("a.com") # hecho por el proceso 1 
+    scrape("b.com") # hecho por el proceso 2 
+    scrape("c.com") # hecho por el proceso 3 
+    scrape("d.com") # hecho por proceso 4
 
-for row in data:
-    print(row)
+    pool.close()
+    print()
+
+    for row in data:
+        print(row)
+
+#tras los arreglos correspondientes, el codigo funciona correctamente, y se puede observar que los procesos se ejecutan en paralelo, y no en orden
+
 """
 urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
 
