@@ -80,23 +80,26 @@ def scrape(url): #definimos la funcion scrape
     print("finished", url, "time taken:", duration, "seconds") #imprimimos el mensaje "finished" junto con el valor de la variable url, y el tiempo que ha tardado en ejecutarse
     return url, duration #devolvemos el valor de la variable url y el tiempo que ha tardado en ejecutarse
 
-def ejecutar_practica():
-    forma_de_ejecucion = input("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente: ")
+def ejecutar_practica(): #definimos la funcion ejecutar_practica, que servira como lanzador del codigo
+    forma_de_ejecucion = input("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente: ") #pedimos al usuario que introduzca la opcion que desea ejecutar
     if forma_de_ejecucion == "1":
         urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
         output = []
-        for url in urls:
+        for url in urls: #recorremos la lista urls
             result = scrape(url)
-            output.append(result)
+            output.append(result) #añadimos el resultado de la ejecucion de la funcion scrape a la lista output
+            #ejecutamos el codigo secuencialmente
     elif forma_de_ejecucion == "2":
         urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
         if __name__ == "__main__":
-            pool = Pool(processes=4)
-            data = pool.map(scrape, urls)
-            pool.close()    
+            pool = Pool(processes=4) #creamos un pool de procesos con 4 procesos
+            data = pool.map(scrape, urls) #ejecutamos la funcion scrape en paralelo
+            pool.close() #cerramos el pool de procesos
             print()
             for row in data:
                 print(row)
+            #ejecutamos el codigo en paralelo
     else:
         print("Opcion no valida")
         ejecutar_practica()
+        #si el usuario no introduce una opcion valida, se le volvera a pedir que introduzca una opcion valida
