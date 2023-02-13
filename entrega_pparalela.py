@@ -73,12 +73,12 @@ if __name__ == "__main__":
     for row in data:
         print(row)"""
 
-def scrape(url):
-    print("starting", url)
-    duration = round(random.random(),3)
-    sleep(duration)
-    print("finished", url, "time taken:", duration, "seconds")
-    return url, duration
+def scrape(url): #definimos la funcion scrape
+    print("starting", url) #imprimimos el mensaje "starting" junto con el valor de la variable url
+    duration = round(random.random(),3) #generamos un numero aleatorio entre 0 y 1, con 3 decimales
+    sleep(duration) #retrasamos la ejecucion del codigo durante el tiempo que dure el numero aleatorio generado, para una mejor visualizacion
+    print("finished", url, "time taken:", duration, "seconds") #imprimimos el mensaje "finished" junto con el valor de la variable url, y el tiempo que ha tardado en ejecutarse
+    return url, duration #devolvemos el valor de la variable url y el tiempo que ha tardado en ejecutarse
 
 def ejecutar_practica():
     forma_de_ejecucion = input("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente: ")
