@@ -21,7 +21,8 @@ for url in urls:
 #las ejecuciones de los procesos se realizan en orden, por lo que nunca comenzara el proceso 2 hasta que el proceso 1 no haya terminado
 """
 #ahora ejecutaremos el codigo con la libreria multiprocessing, para probar la programacion paralela
-urls = ["a.com", "b.com", "c.com", "d.com"]
+"""urls = ["a.com", "b.com", "c.com", "d.com"]""" 
+urls = ["a.com", "b.com", "c.com", "d.com", "e.com"] #probamos a ejecutar el codigo con 5 procesos
 
 def scrape(url):
     print("starting", url)
