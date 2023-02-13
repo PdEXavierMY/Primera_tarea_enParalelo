@@ -16,6 +16,8 @@ for url in urls:
     result = scrape(url)
     output.append(result)
 
+#las ejecuciones de los procesos se realizan en orden, por lo que nunca comenzara el proceso 2 hasta que el proceso 1 no haya terminado
+
 #from multiprocessing import Pool
 
 # pool = Pool(processes=4)
