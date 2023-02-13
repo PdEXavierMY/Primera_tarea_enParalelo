@@ -18,21 +18,23 @@ for url in urls:
 
 #las ejecuciones de los procesos se realizan en orden, por lo que nunca comenzara el proceso 2 hasta que el proceso 1 no haya terminado
 
-#from multiprocessing import Pool
+#ahora ejecutaremos el codigo con la libreria multiprocessing, para probar la programacion paralela
 
-# pool = Pool(processes=4)
+from multiprocessing import Pool
 
-# data = pool.map(scrape, urls)
+pool = Pool(processes=4)
 
-# scrape ("a.com") # hecho por el proceso 1 
-# scrape ("b.com") # hecho por el proceso 2 
-# scrape ("c.com") # hecho por el proceso 3 
-# scrape ("d.com") # hecho por proceso 4
+data = pool.map(scrape, urls)
 
-# pool.close()
-# print()
-# for row in data:
-#     print(row)
+scrape ("a.com") # hecho por el proceso 1 
+scrape ("b.com") # hecho por el proceso 2 
+scrape ("c.com") # hecho por el proceso 3 
+scrape ("d.com") # hecho por proceso 4
+
+pool.close()
+print()
+for row in data:
+    print(row)
 
 # urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
 
