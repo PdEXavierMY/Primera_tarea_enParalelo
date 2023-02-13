@@ -1,6 +1,7 @@
 import random #importamos la libreria random para generar numeros aleatorios
 from multiprocessing import Pool #importamos la libreria multiprocessing para poder ejecutar procesos en paralelo
 from time import sleep #importamos la libreria time para poder usar la funcion sleep(que restrasara la ejecucion del codigo)
+from introducir import solicitar_introducir_numero_extremo #importamos la funcion solicitar_introducir_numero_extremo del modulo introducir, que nos permitira pedir al usuario que introduzca un numero entre dos valores
 
 """urls = ["a.com", "b.com", "c.com", "d.com"] #comenzamos probando a ejecutar el primer ejemplo de codigo provisto
 
@@ -81,7 +82,7 @@ def scrape(url): #definimos la funcion scrape
     return url, duration #devolvemos el valor de la variable url y el tiempo que ha tardado en ejecutarse
 
 def ejecutar_practica(): #definimos la funcion ejecutar_practica, que servira como lanzador del codigo
-    forma_de_ejecucion = input("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente: ") #pedimos al usuario que introduzca la opcion que desea ejecutar
+    forma_de_ejecucion = solicitar_introducir_numero_extremo("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente: ", 1, 2) #pedimos al usuario que introduzca la opcion que desea ejecutar
     if forma_de_ejecucion == "1":
         urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
         output = []
@@ -99,7 +100,3 @@ def ejecutar_practica(): #definimos la funcion ejecutar_practica, que servira co
             for row in data:
                 print(row)
             #ejecutamos el codigo en paralelo
-    else:
-        print("Opcion no valida")
-        ejecutar_practica()
-        #si el usuario no introduce una opcion valida, se le volvera a pedir que introduzca una opcion valida
