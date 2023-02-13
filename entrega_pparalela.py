@@ -22,6 +22,7 @@ for url in urls:
 """
 #ahora ejecutaremos el codigo con la libreria multiprocessing, para probar la programacion paralela
 """urls = ["a.com", "b.com", "c.com", "d.com"]""" 
+"""
 urls = ["a.com", "b.com", "c.com", "d.com", "e.com"] #probamos a ejecutar el codigo con 5 procesos
 
 def scrape(url):
@@ -52,9 +53,9 @@ if __name__ == "__main__":
 
 #tras los arreglos correspondientes, el codigo funciona correctamente, y se puede observar que los procesos se ejecutan en paralelo, y no en orden
 
-"""
 urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
-
+"""
+#ahora probaremos a ejecutar el codigo final
 
 def scrape(url):
     print("starting", url)
@@ -71,4 +72,4 @@ if __name__ == "__main__":
     pool.close()    
     print()
     for row in data:
-        print(row)"""
+        print(row)
