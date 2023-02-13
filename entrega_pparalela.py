@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
 urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
 """
-#ahora probaremos a ejecutar el codigo final
+#ahora probaremos a ejecutar el codigo final con 5 procesos
 
 def scrape(url):
     print("starting", url)
@@ -64,7 +64,8 @@ def scrape(url):
     print("finished", url, "time taken:", duration, "seconds")
     return url, duration
 
-urls = ["a.com", "b.com", "c.com", "d.com"]
+#urls = ["a.com", "b.com", "c.com", "d.com"]
+urls = ["a.com", "b.com", "c.com", "d.com", "e.com"]
 
 if __name__ == "__main__":
     pool = Pool(processes=4)
