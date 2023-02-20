@@ -74,6 +74,16 @@ if __name__ == "__main__":
     for row in data:
         print(row)"""
 
+def mide_tiempo(funcion): #definimos la funcion mide_tiempo, que servira para medir el tiempo de ejecucion de una funcion
+    def wrapper(*args, **kwargs): #definimos la funcion wrapper, que servira como envoltorio de la funcion que queremos medir
+        import time #importamos la libreria time para poder usar la funcion time.time()
+        start = time.time() #guardamos el tiempo actual en la variable start
+        result = funcion(*args, **kwargs) #ejecutamos la funcion que queremos medir
+        end = time.time() #guardamos el tiempo actual en la variable end
+        print("Tiempo de ejecucion:", end - start, "segundos") #imprimimos el tiempo que ha tardado en ejecutarse la funcion
+        return result #devolvemos el resultado de la ejecucion de la funcion
+    return wrapper #devolvemos la funcion wrapper
+
 def scrape(url): #definimos la funcion scrape
     print("starting", url) #imprimimos el mensaje "starting" junto con el valor de la variable url
     duration = round(random.random(),3) #generamos un numero aleatorio entre 0 y 1, con 3 decimales
@@ -81,6 +91,8 @@ def scrape(url): #definimos la funcion scrape
     print("finished", url, "time taken:", duration, "seconds") #imprimimos el mensaje "finished" junto con el valor de la variable url, y el tiempo que ha tardado en ejecutarse
     return url, duration #devolvemos el valor de la variable url y el tiempo que ha tardado en ejecutarse
 
+
+@mide_tiempo #decoramos la funcion scrape con la funcion mide_tiempo
 def ejecutar_practica(): #definimos la funcion ejecutar_practica, que servira como lanzador del codigo
     urls = ["a.com", "b.com", "c.com", "d.com", "e.com"] #creamos una lista con 5 urls
     forma_de_ejecucion = solicitar_introducir_numero_extremo("¿Como desea ejecutar la practica? (1)Secuencialmente (2)Paralelamente", 1, 2) #pedimos al usuario que introduzca la opcion que desea ejecutar
