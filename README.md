@@ -71,7 +71,7 @@ Con todas estas herramientas a nuestra disposición pasamos a analizar distintas
 
 ![C6](https://user-images.githubusercontent.com/91721699/220148397-655a14e5-bf15-40da-9127-f357886857b2.png)
 
-Es bastante obvio simplemente fijándonos en las medias de cada tipo de programación, que el mejor método que podemos utilizar para poder optimizar al máximo nuestro tiempo y el del programa es la ejecución paralela.
+Es bastante obvio con estos resultados, simplemente fijándonos en las medias de cada tipo de programación, que el mejor método que podemos utilizar para poder optimizar al máximo nuestro tiempo y el del programa es la ejecución paralela.
 
 <h5>Media de tiempo de ejecución en secuencia: 3.9538</h5>
 
