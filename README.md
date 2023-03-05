@@ -1,5 +1,7 @@
 # Primera_tarea_enParalelo
 
+Pincha [aquí](https://github.com/Xavitheforce/Primera_tarea_enParalelo) para dirigirte a mi repositorio.
+
 En esta entrega aprendemos el valor de la programación concurrente. El código que se ha utilizado tiene una parte que se ejecuta en paralelo y otra que lo hace en secuencia. En este ejemplo concreto, podemos ver la gran diferencia que hay entre el tiempo que tarda el programa en ejecutarse de manera secuncial y el tiempo que tarda en ejecutarse de forma paralela.
 
 El código provisto y analizado es el siguiente:
